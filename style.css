@@ -55,10 +55,14 @@ input:focus {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-top: 20px;
 }
 
 #btn:hover {
   background-color: rgb(33, 112, 103);
+}
+h3{
+  margin-top: 20px;
 }
 
 /* Keyframes for the form animation */
