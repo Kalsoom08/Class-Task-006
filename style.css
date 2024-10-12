@@ -42,6 +42,9 @@ input {
   caret-color: rgb(209, 79, 92);
   transition: box-shadow 0.3s ease;
 }
+#output{
+ padding-top: 30px;
+}
 
 input:focus {
   outline: none;
