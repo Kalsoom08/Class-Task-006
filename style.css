@@ -10,6 +10,7 @@ body {
   align-content: center;
   height: 100vh;
   background-color: rgb(58, 88, 85);
+  animation: backgroundColor 5s ease-in-out infinite alternate;
 }
 
 form {
@@ -21,13 +22,14 @@ form {
   padding: 30px;
   background-color: white;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  animation: fadeInScale 1s ease-in-out;
+  animation: formScale 1s ease-in-out;
 }
 
 legend {
   font-size: 1.5em;
   color: rgb(58, 88, 85);
   margin-bottom: 10px;
+
 }
 
 input {
@@ -37,52 +39,46 @@ input {
   border: 1px solid rgb(58, 88, 85);
   border-radius: 5px;
   padding: 5px;
+  caret-color: rgb(209, 79, 92);
+  transition: box-shadow 0.3s ease;
 }
 
 input:focus {
   outline: none;
   border-color: rgb(42, 157, 143);
   box-shadow: 0px 0px 5px rgba(42, 157, 143, 0.5);
+  animation: pulse 1.2s infinite;
 }
-.buttn{
+
+.buttn {
   display: flex;
   justify-content: center;
 }
-#btn {
+
+#btn, #resetBtn {
   justify-self: center;
-  width:100px;
+  width: 100px;
   height: 45px;
   background-color: rgb(42, 157, 143);
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 20px;
-}
-#resetBtn{
-  justify-self: center;
-  width:100px;
-  height: 45px;
-  background-color: rgb(42, 157, 143);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 20px;
-}
-#resetBtn:hover{
-  background-color: rgb(33, 112, 103);
-}
-#btn:hover {
-  background-color: rgb(33, 112, 103);
-}
-h3{
+  transition: background-color 0.3s ease, transform 0.3s ease;
   margin-top: 20px;
 }
 
-@keyframes fadeInScale {
+#btn:hover, #resetBtn:hover {
+  background-color: rgb(33, 112, 103);
+  transform: scale(1.05);
+}
+
+h3 {
+  margin-top: 20px;
+  opacity: 0;
+}
+
+@keyframes formScale {
   0% {
     opacity: 0;
     transform: scale(0.8); 
@@ -90,5 +86,27 @@ h3{
   100% {
     opacity: 1;
     transform: scale(1); 
+  }
+}
+
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0px 0px 5px rgba(42, 157, 143, 0.5);
+  }
+  50% {
+    box-shadow: 0px 0px 10px rgba(42, 157, 143, 0.8);
+  }
+  100% {
+    box-shadow: 0px 0px 5px rgba(42, 157, 143, 0.5);
+  }
+}
+
+@keyframes backgroundColor {
+  0% {
+    background-color: rgb(41, 133, 122);
+  }
+  100% {
+    background-color: rgb(20, 47, 63);
   }
 }
